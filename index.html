@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Sistema para anotações Pix</title>
+</head>
+<body>
+    <main>
+        <div id="title">
+            <h1>Sistema para Anotações Pix</h1>
+        </div>
+        <form action="#">
+                <div>
+                    <label for="nomeCliente">Nome do cliente:</label>
+                    <input type="text" name="nomeCliente" id="nomeCliente" required>
+                </div>
+                <div class="input-pix">
+                    <label for="valorPix">Valor do pix:</label>
+                    <input type="number" name="valorPix" id="valorPix" step="0.01" required>
+                </div>
+                <div class="btn-adicionar">
+                    <button class="anotar" onclick="adicionarPix()">Adicionar</button>
+                </div>
+        </form>
+
+        <div class="content-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do cliente</th>
+                        <th>Valor do Pix</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tbody id="tabela-pix">
+                        <tr>
+
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+
+            <div class="total-box">
+                <div>
+                    <span id="total-pix">Total: R$ 0.00</h2>
+                </div>
+
+                <div class="btn-table">
+                    <button class="btn-exportar" onclick="imprimirTabela()">Imprimir</button>
+                    <button class="btn-limpar" onclick="limparDados()">Limpar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <span>Desenvolvido por Matheus Lincon</span>
+    </footer>
+    
+
+
+    <script src="src/javascript/script.js"></script>
+</body>
+</html>
