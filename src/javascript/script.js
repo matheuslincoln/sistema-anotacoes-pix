@@ -96,26 +96,44 @@ function carregarDados() {
 
 //Função imprimir
 function imprimirTabela() {
-    let conteudo = "\nSISTEMA ANOTAÇÕES PIX\n";
-    conteudo += "--------------------------------\n";
-    document.querySelectorAll("#tabela-pix tr").forEach(linha => {
-        const nome = linha.cells[0]?.innerText;
-        const valor = linha.cells[1]?.innerText;
-        const data = linha.cells[2]?.innerText;
-        conteudo += `${data} - ${nome}: ${valor}\n`;
-    });
-    conteudo += "--------------------------------\n";
-    conteudo += document.getElementById("total-pix").innerText + "\n";
-
-    // Impressão via Bematech MP-4200 TH
     try {
         let impressora = window.OBJ_Impressora;
+
+        // Configura modelo de impressora (7 = MP-4200 TH)
         impressora.ConfiguraModeloImpressora(7);
-        impressora.IniciaPorta("USB");
-        impressora.ImprimeTexto(conteudo, 0, 0, 0, 0, 0);
+
+        // Inicia a comunicação com a impressora via USB
+        if (!impressora.IniciaPorta("USB")) {
+            alert("Erro ao conectar com a impressora.");
+            return;
+        }
+
+        // Cabeçalho
+        impressora.ImprimeTexto("SISTEMA ANOTAÇÕES PIX\n", 2, 0, 0, 1, 0);
+        impressora.ImprimeTexto("--------------------------------\n", 1, 0, 0, 0, 0);
+
+        // Tabela de Anotações
+        document.querySelectorAll("#tabela-pix tr").forEach(linha => {
+            const data = linha.cells[2]?.innerText;
+            const nome = linha.cells[0]?.innerText.padEnd(15, ' ');
+            const valor = linha.cells[1]?.innerText.padStart(10, ' ');
+            const textoLinha = `${data} ${nome} ${valor}\n`;
+            impressora.ImprimeTexto(textoLinha, 1, 0, 0, 0, 0);
+        });
+
+        // Rodapé com o total
+        impressora.ImprimeTexto("--------------------------------\n", 1, 0, 0, 0, 0);
+        impressora.ImprimeTexto(document.getElementById("total-pix").innerText + "\n", 2, 0, 1, 1, 0);
+
+        // Alimenta o papel e corta automaticamente
+        impressora.AvancaPapel(5);
+        impressora.CortaPapel(0);
+        
+        // Fecha a conexão com a impressora
         impressora.FechaPorta();
     } catch (e) {
         alert("Erro ao imprimir. Verifique a conexão com a impressora.");
     }
 }
+
 
