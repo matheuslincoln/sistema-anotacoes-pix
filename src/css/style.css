@@ -227,9 +227,61 @@ footer {
     .no-print {
         display: none; /* Esconde o botão ao imprimir */
     }
-}
-#content-table {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid black;
+
+    #title {
+        width: 45mm;
+        margin-bottom: 20px;
+    }
+
+    #title h1 {
+        font-size: 14px;
+        font-family: 'Times New Roman', Times, serif, Courier, monospace;
+        color: black;
+        border: none;
+        box-shadow: none;
+    }
+
+    form {
+        display: none;
+    }
+
+    .content-table {
+        margin: 0 auto;
+        width: 60mm;
+
+    }
+
+    table {
+        border: none;
+    }
+
+    thead {
+        background-color: transparent;
+    }
+
+    th {
+        font-family: 'Times New Roman', Times, serif, Courier, monospace;
+        font-size: 8px;
+    }
+
+    td {
+        font-size: 10px;
+        font-family: 'Times New Roman', Times, serif, Courier, monospace;
+        margin-bottom: 8px;
+    }
+
+    .btn-remover {
+        display: none;
+    }
+
+    .box-total, .total-box {
+        max-width: 60mm;
+    }
+
+    .box-total span {
+        font-size: 8px;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+    }
+
 }
