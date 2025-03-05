@@ -221,11 +221,15 @@ footer {
 
 @media print {
     body {
-        width: 80mm; /* Ajustado para bobina térmica */
+        width: 100mm; /* Ajustado para bobina térmica */
         font-size: 14px;
     }
     .no-print {
         display: none; /* Esconde o botão ao imprimir */
+    }
+
+    main {
+        width: 100mm;
     }
 
     #title {
@@ -247,27 +251,25 @@ footer {
 
     .content-table {
         margin: 0 auto;
-        width: 60mm;
+        width: 80mm;
 
     }
 
     table {
-        border: none;
-    }
-
-    thead {
-        background-color: transparent;
+        width: 70mm;
     }
 
     th {
         font-family: 'Times New Roman', Times, serif, Courier, monospace;
-        font-size: 8px;
+        font-size: 12px;
+        padding: 5px;
     }
 
     td {
-        font-size: 10px;
+        font-size: 12px;
+        font-weight: 600;
         font-family: 'Times New Roman', Times, serif, Courier, monospace;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     .btn-remover {
