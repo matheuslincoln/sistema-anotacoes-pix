@@ -221,7 +221,8 @@ footer {
 
 @media print {
     body {
-        width: 100mm; /* Ajustado para bobina térmica */
+        margin: auto;
+        width: 120mm; /* Ajustado para bobina térmica */
         font-size: 14px;
     }
     .no-print {
@@ -229,17 +230,20 @@ footer {
     }
 
     main {
-        width: 100mm;
+        margin: 20px auto;
+        box-shadow: none;
+        width: 120mm;
     }
 
     #title {
-        width: 45mm;
+        width: 80mm;
         margin-bottom: 20px;
+        box-shadow: none;
     }
 
     #title h1 {
-        font-size: 14px;
-        font-family: 'Times New Roman', Times, serif, Courier, monospace;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
         color: black;
         border: none;
         box-shadow: none;
@@ -256,34 +260,40 @@ footer {
     }
 
     table {
-        width: 70mm;
+        width: 110mm;
     }
 
     th {
-        font-family: 'Times New Roman', Times, serif, Courier, monospace;
-        font-size: 12px;
+        border: 1px solid black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
         padding: 5px;
+        box-shadow: none;
     }
 
     td {
-        font-size: 12px;
+        font-size: 16px;
         font-weight: 600;
-        font-family: 'Times New Roman', Times, serif, Courier, monospace;
-        margin-bottom: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
     }
 
     .btn-remover {
         display: none;
     }
 
-    .box-total, .total-box {
+    .total-box {
+        width: 60mm;
+    }
+
+    .box-total {
+        padding: 10px;
+        margin: auto;
         max-width: 60mm;
     }
 
-    .box-total span {
-        font-size: 8px;
-        font-family: 'Times New Roman', Times, serif;
-        text-align: center;
+    #total-pix {
+        font-family: Arial, Helvetica, sans-serif;
     }
 
 }
