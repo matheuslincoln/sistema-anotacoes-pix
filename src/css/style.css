@@ -223,7 +223,7 @@ footer {
     body {
         display: flex;
         flex-direction: column;
-        width: 88mm; /* Ajustado para bobina térmica */
+        width: 80mm; /* Ajustado para bobina térmica */
     }
     .no-print {
         display: none; /* Esconde o botão ao imprimir */
@@ -234,10 +234,13 @@ footer {
         justify-content: start;
         box-shadow: none;
         margin-top: 20px;
-        width: 88mm;
+        width: 80mm;
     }
 
     #title {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
         width: 75mm;
         margin-bottom: 20px;
         box-shadow: none;
@@ -256,12 +259,12 @@ footer {
     }
 
     .content-table {
-        width: 88mm;
+        width: 80mm;
 
     }
 
     table {
-        width: 88mm;
+        width: 80mm;
     }
 
     th {
