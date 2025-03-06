@@ -221,7 +221,6 @@ footer {
 
 @media print {
     body {
-        border: 1px solid green;
         display: flex;
         flex-direction: column;
         width: 88mm; /* Ajustado para bobina térmica */
@@ -231,7 +230,6 @@ footer {
     }
 
     main {
-        border: 1px solid blue;
         display: flex;
         justify-content: start;
         box-shadow: none;
@@ -240,7 +238,6 @@ footer {
     }
 
     #title {
-        border: 1px solid red;
         width: 75mm;
         margin-bottom: 20px;
         box-shadow: none;
@@ -276,7 +273,6 @@ footer {
     }
 
     td {
-        border: 1px solid red;
         font-size: 12px;
         font-weight: 600;
         font-family: Arial, Helvetica, sans-serif;
